@@ -1,6 +1,11 @@
 # Gold N Gears Automation Scipt
 Just a python script to automate simple Gold n Gear Tasks
 
+# Dependencies
+- Python3
+- keyboard library
+- pyautogui
+
 # Instalation
 ```sh
 cd [path of choice]
@@ -12,14 +17,14 @@ Make sure all the files are in the same folder.
 
 Run the script "controller.py" in admin mode.
 
-Press ctrl + x to force exit.
+Press **ctrl + x** to **force exit**.
 
 ## Upgrade All Blessings
 When at the upgrade screen just press ctrl + w to start it.
 
 In the last rows **hold** ctrl + e.
 
-To stop press ctrl + q.
+To stop **hold** ctrl + q.
 
 ## Reroll Helper
 At the start menu press ctrl + r.

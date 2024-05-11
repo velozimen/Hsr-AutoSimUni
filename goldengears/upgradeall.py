@@ -4,14 +4,13 @@ import keyboard
 
 def scroll_page(scroll_count, direction='down'):
     scroll_count *= 10
-    scroll_amount = 1000  # Positive for scrolling down, negative for scrolling up
+    scroll_amount = 100
     if direction == 'up':
         scroll_amount *= -1
 
     for _ in range(scroll_count):
         pyautogui.scroll(scroll_amount)
-        time.sleep(0.001)  # Add a slight delay between scrolls for smoother execution
-
+        time.sleep(0.001)  
 def enhance():
     initial = pyautogui.position()
     pyautogui.moveTo(1568,989)
