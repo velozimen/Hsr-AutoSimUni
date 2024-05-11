@@ -2,8 +2,19 @@ import pyautogui
 import time
 import keyboard
 
+firstcol = 168
+coldiference = 215
+blessingPerCol = 6
+row1 = 362
+row2 = 504
+row3 = 800
+confirmpos = (1568,989)
+scrollMultiplier = 10
+
+
+
 def scroll_page(scroll_count, direction='down'):
-    scroll_count *= 10
+    scroll_count *= scrollMultiplier
     scroll_amount = 100
     if direction == 'up':
         scroll_amount *= -1
@@ -13,22 +24,17 @@ def scroll_page(scroll_count, direction='down'):
         time.sleep(0.001)  
 def enhance():
     initial = pyautogui.position()
-    pyautogui.moveTo(1568,989)
+    pyautogui.moveTo(confirmpos)
     for _ in range(10):
         pyautogui.click()
         time.sleep(0.001)
     pyautogui.moveTo(initial)
 
 def next():
-    pyautogui.drag(215)
+    pyautogui.drag(coldiference)
 
-def setfirst(row=1):
-    if (row == 1):
-        pyautogui.moveTo(168,362)
-    elif (row == 2):
-        pyautogui.moveTo(168,504)
-    else:
-        pyautogui.moveTo(168,800)
+def setfirst(row=row1):
+    pyautogui.moveTo(firstcol,row)
     pyautogui.click()
 
 # Example usage
@@ -40,7 +46,7 @@ def start():
                 print("Stopping...")
                 return
             
-            for x in range(6):
+            for x in range(blessingPerCol):
                 enhance()
                 if keyboard.is_pressed('ctrl+q'):  # Check if Ctrl+Q is pressed between actions
                     print("Stopping...")
@@ -52,12 +58,12 @@ def start():
             if (keyboard.is_pressed('ctrl+e')):
                 break
 
-        setfirst(2)
-        for x in range(6):
+        setfirst(row2)
+        for x in range(blessingPerCol):
             enhance()
             next()
-        setfirst(3)
-        for x in range(6):
+        setfirst(row3)
+        for x in range(blessingPerCol):
             enhance()
             next()
         print("Ended the enhancements")
