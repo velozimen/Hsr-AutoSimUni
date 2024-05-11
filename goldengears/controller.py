@@ -1,6 +1,7 @@
 import upgradeall as upg
 import reroller as reroll
 import keyboard
+import time
 
 def start_upgrade():
     print("Upgrade starting...")
@@ -16,7 +17,7 @@ def exit_script():
 
 def listen_for_hotkeys():
     keyboard.add_hotkey('ctrl+w', start_upgrade) # ctrl + e last rows, ctrl + q to stop
-    keyboard.add_hotkey('ctrl+r', start_reroll) # ctrl + c continue loop, ctrl + q to stop
+    keyboard.add_hotkey('ctrl+r', start_reroll)
 
 listen_for_hotkeys()
 def start():
@@ -24,6 +25,8 @@ def start():
         if (keyboard.is_pressed('ctrl+x')):
             print('Stopped')
             return
+        time.sleep(0.2)
+        
 
 start()
 

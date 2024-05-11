@@ -1,6 +1,7 @@
 import pyautogui
 import time
 import keyboard
+import findBlessingPage as fbp
 
 firstcol = 168
 coldiference = 215
@@ -10,18 +11,18 @@ row2 = 504
 row3 = 800
 confirmpos = (1568,989)
 scrollMultiplier = 10
-
+number = fbp.start()
+print(number)
 
 
 def scroll_page(scroll_count, direction='down'):
     scroll_count *= scrollMultiplier
-    scroll_amount = 100
-    if direction == 'up':
-        scroll_amount *= -1
+    scroll_amount = -95
 
     for _ in range(scroll_count):
         pyautogui.scroll(scroll_amount)
         time.sleep(0.001)  
+        
 def enhance():
     initial = pyautogui.position()
     pyautogui.moveTo(confirmpos)
@@ -40,35 +41,26 @@ def setfirst(row=row1):
 # Example usage
 def start():
     setfirst()
-    try:
-        while True:
-            if keyboard.is_pressed('ctrl+q'):  # Check if Ctrl+Q is pressed at the start
-                print("Stopping...")
-                return
-            
-            for x in range(blessingPerCol):
-                enhance()
-                if keyboard.is_pressed('ctrl+q'):  # Check if Ctrl+Q is pressed between actions
-                    print("Stopping...")
-                    return
-                next()
-            setfirst()
-            scroll_page(1, "up")
-            setfirst()
-            if (keyboard.is_pressed('ctrl+e')):
-                break
-
-        setfirst(row2)
-        for x in range(blessingPerCol):
+    current = 1
+    numOfRows = (number // blessingPerCol) +1
+    for _ in range(numOfRows -2):
+        for _ in range(blessingPerCol):
             enhance()
             next()
-        setfirst(row3)
-        for x in range(blessingPerCol):
-            enhance()
-            next()
-        print("Ended the enhancements")
-        return
-        
 
-    except KeyboardInterrupt:
-        print("Program exited.")
+        setfirst()
+        scroll_page(1, "up")
+        setfirst()
+
+    setfirst(row2)
+    for _ in range(blessingPerCol):
+        enhance()
+        next()
+    setfirst(row3)
+    for _ in range(blessingPerCol *numOfRows - number):
+        enhance()
+        next()
+    print("Ended the enhancements")
+    return
+time.sleep(2)
+start()
