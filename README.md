@@ -5,7 +5,9 @@ Just a python script to automate simple Gold n Gears Tasks
 - [Python3](https://www.python.org/downloads/)
 - [keyboard](https://pypi.org/project/keyboard/)
 - [pyautogui](https://pypi.org/project/PyAutoGUI/)
-- [terrasect]()
+- [terrasect](https://pypi.org/project/pytesseract/)
+- [Pillow](https://pypi.org/project/pillow/)
+- [Opencv](https://pypi.org/project/opencv-python/)
 
 # Instalation
 ```sh
@@ -39,5 +41,7 @@ When the curio select screen shows up take control until you defeated the enemy 
 # Planned Features
 
 Making it so it auto detects where the buttons positions
+
 UI interface
+
 Actual Release
