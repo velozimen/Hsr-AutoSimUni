@@ -9,17 +9,23 @@ git clone https://github.com/velozimen/HonkaiSrGoldNGears.git
 
 # Usage
 Make sure all the files are in the same folder.
+
 Run the script "controller.py" in admin mode.
+
 Press ctrl + x to force exit.
 
 ## Upgrade All Blessings
 When at the upgrade screen just press ctrl + w to start it.
-In the last rows **hold** ctrl + e 
-To stop press ctrl + q
+
+In the last rows **hold** ctrl + e.
+
+To stop press ctrl + q.
 
 ## Reroll Helper
-At the start menu press ctrl + r
+At the start menu press ctrl + r.
+
 When the curio select screen shows up take control until you defeated the enemy closest to the beacon.
+
 After that press ctrl + c to continue the loop.
 
 # Planned Features
